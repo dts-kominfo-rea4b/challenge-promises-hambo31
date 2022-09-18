@@ -2,8 +2,9 @@ const { promiseTheaterIXX, promiseTheaterVGC } = require("./external.js");
 
 // TODO: Buat fungsi promiseOutput sesuai ketentuan readme
 //const promiseOutput = null;
-let kond = 0;
 function promiseOutput(param) {
+  let kond = 0;
+
   promiseTheaterIXX().then(function (result) {
     //console.log(result[0].hasil);
 
@@ -16,8 +17,6 @@ function promiseOutput(param) {
   });
 
   promiseTheaterVGC().then(function (result) {
-    //console.log(result[0].hasil);
-
     result.forEach(function (a) {
       if (param == "marah") {
         a.hasil == param ? kond++ : kond;
@@ -28,7 +27,7 @@ function promiseOutput(param) {
   });
 }
 
-promiseOutput("marah");
-// module.exports = {
-//   promiseOutput,
-// };
+//promiseOutput("marah");
+module.exports = {
+  promiseOutput,
+};
